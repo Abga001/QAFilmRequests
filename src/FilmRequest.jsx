@@ -17,7 +17,7 @@ function FilmRequest() {
   }
 
   const makeRequest =(e) => {
-      axios.get("http://www.omdbapi.com/?apikey=" + apiKey + "&t=" + filmTitle)
+      axios.get("http://www.omdbapi.com/?apikey=" + "e698fbc8" + "&t=" + filmTitle)
       .then(response => {
           console.log(response.data);
           setData(response.data);
@@ -37,11 +37,11 @@ function FilmRequest() {
       </p>
       <button onClick={(e) => makeRequest(e)}>Click me</button>
 
-      <p>{data.Title}</p>
-      <p>{data.Year}</p>
-      <p>{data.Rated}</p>
-      <p>{data.Genre}</p>
-      <p>{data.Plot}</p>
+      <p>Title: {data.Title}</p>
+      <p>Year Released: {data.Year}</p>
+      <p>Rating: {data.Rated}</p>
+      <p>Genre: {data.Genre}</p>
+      <p>Plot: {data.Plot}</p>
       <img src={data.Poster} alt="The poster"></img>
       </div>
   </>
